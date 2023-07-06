@@ -1,0 +1,162 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3{
+    margin: 0;
+    padding: 0;
+  }
+  h1{
+    color: darkblue;
+  }
+  h3{
+    color: darkgray;
+  }
+  
+  .header {
+    background-color: #f1f1f1;;
+    padding: 20px;
+
+  }
+  
+  .header_panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .header_panel img {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+  }
+  h1{
+    margin-left: 20px;
+  }
+  
+  .main {
+    padding: 20px;
+  }
+  
+  .text-description {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .like-dogs {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .art-dog{
+    margin: 20px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: bisque;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  
+  .img-dogs {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+    object-fit: cover;
+  }
+  
+  .btn {
+    padding: 10px;
+    margin: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .btn:hover {
+    background-color: #555;
+  }
+  
+  #btn-reload-dogs {
+    margin-bottom: 20px;
+  }
+  
+  .liked-dogs {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .liked-dogs article {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .liked-dogs img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  #btn-del-fav {
+    background-color: #f00;
+    display: block;
+  }
+  .sec-dogs{
+    background-color: darkgrey;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  #btn-reload-dogs{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.art-dog-2{
+  margin: 20px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  background-color: bisque;
+  padding: 20px;
+  border-radius: 5px;
+}
+  
+  /* Media queries */
+  @media screen and (min-width: 768px) {
+    .article {
+      width: calc(33.33% - 10px);
+      margin-right: 10px;
+    }
+  
+    .liked-dogs article {
+      width: calc(20% - 10px);
+    }
+  }
+  
+  @media screen and (min-width: 992px) {
+    .article {
+      width: calc(25% - 10px);
+      margin-right: 10px;
+    }
+  }
+  
+  @media screen and (min-width: 1200px) {
+    .article {
+      width: calc(20% - 10px);
+      margin-right: 10px;
+    }
+  }
