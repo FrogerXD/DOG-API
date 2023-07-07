@@ -58,7 +58,7 @@ body {
   }
   .art-dog{
     margin: 20px;
-    min-width: 200px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     background-color: bisque;
