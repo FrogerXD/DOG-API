@@ -108,10 +108,16 @@ body {
     margin-bottom: 10px;
   }
   
-  #btn-del-fav {
+  .btn-del-fav {
     background-color: #f00;
     display: block;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
   }
+
   .sec-dogs{
     background-color: darkgrey;
     border-radius: 20px;
