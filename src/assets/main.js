@@ -1,6 +1,6 @@
 const API_RANDOM='https://api.thedogapi.com/v1/images/search?limit=4&api_key=live_o9FGwQ98uxzojWMh4aAkSI9bjnx4faI0Wea3ioIYemROoeuNU1ORh3QaXufkGngd'
 const API_RANDOM_1='https://api.thedogapi.com/v1/images/search?limit=1&api_key=live_o9FGwQ98uxzojWMh4aAkSI9bjnx4faI0Wea3ioIYemROoeuNU1ORh3QaXufkGngd'
-const API_FAVORITES='https://api.thedogapi.com/v1/favourites?limit=10&api_key=live_o9FGwQ98uxzojWMh4aAkSI9bjnx4faI0Wea3ioIYemROoeuNU1ORh3QaXufkGngd'
+const API_FAVORITES='https://api.thedogapi.com/v1/favourites?limit=10'
 const API_FAVORITES_DELETE = (id)=>`https://api.thedogapi.com/v1/favourites/${id}?api_key=live_o9FGwQ98uxzojWMh4aAkSI9bjnx4faI0Wea3ioIYemROoeuNU1ORh3QaXufkGngd`
 
 
@@ -78,6 +78,7 @@ async function fetch_post_dog(url,id,im,url1){
         method: "POST" ,
         headers: {
             'Content-Type':'application/json',
+            'X-API-KEY': 'live_o9FGwQ98uxzojWMh4aAkSI9bjnx4faI0Wea3ioIYemROoeuNU1ORh3QaXufkGngd'
         },
         body: JSON.stringify({
             image_id: id
@@ -166,7 +167,10 @@ async function fetch_delete_dog(url,id){
 
 
 async function fetch_dog_fav(url){
-    const respose = await fetch(url, { method: "Get" })
+    const respose = await fetch(url, { method: "Get",
+    headers:{
+        'X-API-KEY': 'live_o9FGwQ98uxzojWMh4aAkSI9bjnx4faI0Wea3ioIYemROoeuNU1ORh3QaXufkGngd'
+    }})
     if (respose.status !==200){
         serror.innerHTML='Hubo un error '+respose.status
     }
