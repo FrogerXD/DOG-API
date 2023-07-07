@@ -1,6 +1,7 @@
 const API_RANDOM='https://api.thedogapi.com/v1/images/search?limit=4&api_key=live_o9FGwQ98uxzojWMh4aAkSI9bjnx4faI0Wea3ioIYemROoeuNU1ORh3QaXufkGngd'
 const API_RANDOM_1='https://api.thedogapi.com/v1/images/search?limit=1&api_key=live_o9FGwQ98uxzojWMh4aAkSI9bjnx4faI0Wea3ioIYemROoeuNU1ORh3QaXufkGngd'
 const API_FAVORITES='https://api.thedogapi.com/v1/favourites?limit=10'
+const API_UPLOAD='https://api.thedogapi.com/v1/images/upload'
 const API_FAVORITES_DELETE = (id)=>`https://api.thedogapi.com/v1/favourites/${id}?api_key=live_o9FGwQ98uxzojWMh4aAkSI9bjnx4faI0Wea3ioIYemROoeuNU1ORh3QaXufkGngd`
 
 
@@ -64,7 +65,7 @@ async function fetch_dog(url){
             sec.appendChild(art)
             art.className=('art-dog')
             art.id=dog.id
-            console.log(dog)
+            //console.log(dog)
             img.className=('img-dogs')
             btn.className='btn'
             btn.addEventListener('click',async()=>{await fetch_post_dog(API_FAVORITES,dog.id,dog.url,API_RANDOM_1)})
@@ -195,6 +196,21 @@ async function fetch_dog_fav(url){
         btn.addEventListener('click',async()=>{await fetch_delete_dog(API_FAVORITES_DELETE(dog.id),dog.id)})
     });
     }
+}
+
+async function upload_dog(){
+    const form=document.getElementById('form-upload-dog')
+    const formdata=new FormData(form)
+    console.log(formdata.get('file'))
+    await fetch(API_UPLOAD,{
+        method:'POST',
+        headers:{
+            //'Content-Type':'multipart/form-data',
+            'X-API-KEY': 'live_o9FGwQ98uxzojWMh4aAkSI9bjnx4faI0Wea3ioIYemROoeuNU1ORh3QaXufkGngd'
+        },
+        body: formdata
+    })
+
 }
 
 (async()=>{
